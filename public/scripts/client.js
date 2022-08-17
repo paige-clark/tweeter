@@ -34,7 +34,7 @@ $(document).ready(function () {
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   }
 
@@ -82,7 +82,9 @@ $(document).ready(function () {
       type: "POST",
       url: '/tweets',
       data: $(this).serialize(),
-      success: () => {
+      success: function(response) {
+        loadTweets();
+  
         $("form").trigger("reset"); // TODO: not working right, doesn't reset counter
       },
       //CONSIDER ADDING SUCCESS AND ERROR HANDLERS?
