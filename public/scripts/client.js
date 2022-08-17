@@ -50,7 +50,7 @@ $(document).ready(function () {
         <p class="tweet-paragraph">${tweetData.content.text}</p>
         <footer>
           <div class="footer-date">
-          ${tweetData["created_at"]}
+          ${timeago.format(tweetData["created_at"])}
           </div>
           <div class="footer-icons">
             <span><i class="fa-solid fa-flag hover-color fa-xs"></i></span>
