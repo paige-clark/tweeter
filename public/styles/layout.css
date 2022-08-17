@@ -12,14 +12,86 @@ html {
 
 /*
  * Global layout stuff
+ * Main font: Source Sans Pro (300, but also available in 600)
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: black;
+  background-color: white;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .bold-text {
+  font-weight: 600;
+
+ }
+
+ .bold-text-2 {
+  font-weight: 600;
+  color: rgb(252, 171, 21);
+ }
+
+ h2 {
+  font-weight: 300;
+  font-size: 1.2em;
+ }
+
+ .container {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  background-color: #f4f1ec00;
+ }
+
+ .new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2em;
+ }
+
+ #tweet-text {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 4px;
+  border-color: black;
+  resize: none;
+  margin-top: .25em;
+  margin-bottom: .25em;
+  background-color:rgba(252, 171, 21, 0);
+  font-size: 0.9em;
+  font-weight: 600;
+ }
+
+
+ .bottom-form {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1em;
+  margin-bottom: 2em;
+ }
+
+ .red-counter-text {
+  color: orangered;
+ }
+ 
+
+ button {
+  color: white;
+  background-color: #2818a1;
+  padding: 0.25em;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+ }
