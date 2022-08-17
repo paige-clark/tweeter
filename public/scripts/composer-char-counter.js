@@ -1,4 +1,4 @@
-console.log(`char counter loaded!`);
+// console.log(`char counter loaded!`);
 // let counter = 140;
 
 $(document).ready(function () {
