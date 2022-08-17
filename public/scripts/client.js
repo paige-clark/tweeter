@@ -61,22 +61,34 @@ $(document).ready(function () {
       </article>`
   }
 
-  // renderTweets(data);
-
   // submit a form with AJAX and jQuery
   $("form").on("submit", function(event) {
     event.preventDefault();
+    let textObj = $(this).serialize();
+    console.log($('#tweet-text').val());
+
+    // input validation
+    if($('#tweet-text').val() === ''){
+      return alert('Text field empty!')
+    }
+    if($('#tweet-text').val() === null){
+      return alert('Text field null!')
+    }
+    if($('#tweet-text').val().length > 140){
+      return alert('Tweet is too long!')
+    }
 
     $.ajax({
       type: "POST",
       url: '/tweets',
       data: $(this).serialize(),
-      // success: (response) => {
-      //   console.log(response.results);
-      // },
-      // // dataType: 'string'
+      success: () => {
+        $("form").trigger("reset"); // TODO: not working right, doesn't reset counter
+      },
       //CONSIDER ADDING SUCCESS AND ERROR HANDLERS?
     });
+
+  
   });
 
   // make AJAX GET request for /tweets database
