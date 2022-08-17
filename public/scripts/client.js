@@ -5,30 +5,30 @@
  */
 
   // Test / driver code (temporary). Eventually will get this from the server.
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1660584971910
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1660671371910
-    }
-  ]
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png",
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1660584971910
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1660671371910
+  //   }
+  // ]
 // populates tweet field
 $(document).ready(function () {
 
@@ -61,12 +61,9 @@ $(document).ready(function () {
       </article>`
   }
 
-  renderTweets(data);
-});
+  // renderTweets(data);
 
-// submit a form with AJAX and jQuery
-$(document).ready(function () {
-
+  // submit a form with AJAX and jQuery
   $("form").on("submit", function(event) {
     event.preventDefault();
 
@@ -78,8 +75,16 @@ $(document).ready(function () {
       //   console.log(response.results);
       // },
       // // dataType: 'string'
+      //CONSIDER ADDING SUCCESS AND ERROR HANDLERS?
     });
-
   });
 
+  // make AJAX GET request for /tweets database
+  const loadTweets = function () {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (data) {
+        renderTweets(data);
+      });
+  }
+  loadTweets();
 });
