@@ -7,15 +7,15 @@ article {
   box-shadow: 0px 0px 0px 0px #2818a1;
   transition: 0.1s ease-out;
   margin-bottom: 1em;
- }
+}
 
- article:hover {
+article:hover {
   box-shadow: 4px 4px 0px 0px #2818a1;
   transition: 0.1s ease-out;
   transform: translate(-2px, -2px);
- }
+}
 
- article header {
+article header {
   display: flex;
   justify-content: space-between;
   width: 96%;
@@ -25,29 +25,29 @@ article {
   padding-right: 0.2rem;
   height: 60px;
   font-size: 0.85rem;
- }
+}
 
- .header-left {
+.header-left {
   display: flex;
   flex-direction: row;
- }
+}
 
- .header-left img {
+.header-left img {
   align-self: center;
   margin-right: 0.3em;
   width: 50px;
- }
+}
 
- .tweet-paragraph {
+.tweet-paragraph {
   width: 90%;
   word-wrap: break-word;
   margin-left: auto;
   margin-right: auto;
   font-weight: 600;
   margin-bottom: 1.5em;
- }
+}
 
- article footer {
+article footer {
   display: flex;
   justify-content: space-between;
   width: 98%;
@@ -56,21 +56,21 @@ article {
   border-top: 4px solid;
   border-color: rgb(252, 171, 21);
   height: 50px;
- }
+}
 
- .footer-date {
+.footer-date {
   scale: 70%;
- }
+}
 
- .footer-icons {
+.footer-icons {
   margin-right: 0.75em;
   margin-top: 4px;
- }
+}
 
- .footer-icons > span {
+.footer-icons>span {
   margin: 2px;
- }
+}
 
- .hover-color:hover {
+.hover-color:hover {
   color: orangered;
- }
+}

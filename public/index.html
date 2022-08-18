@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" /> <!-- nav css -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" /> <!-- header css -->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" /> <!-- tweet css -->
+    <link rel="stylesheet" href="/styles/desktop.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -56,15 +57,16 @@
     
     <!-- header -->
     <header class="main-header">
+      <div class="profile-box">
       <div>
         <img src="/images/profile-hex.png">
       </div>
-      <br>
       <div>
         <h2><span class="bold-text-2">Snail</span> Fan</h2>
       </div>
+    </div>
     </header>
-  
+
     <!-- error content here -->
     <div id="error-box">
       <section id="error" class="error-style">placeholder</section>
@@ -72,7 +74,6 @@
   
     <!-- page-specific content here -->
     <main class="container">
-  
       <section class="new-tweet">
         <!--<h2>Compose Tweet</h2>-->
         <form action="/tweets" method="POST">
@@ -85,10 +86,10 @@
           </div>
         </form>
       </section>
-  
+    
       <!-- tweets-specific content here -->
       <section id="tweets-container"></section>
-  
+    
     </main>
   </body>
 </html>
