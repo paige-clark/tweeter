@@ -1,5 +1,4 @@
 @media only screen and (min-width: 1024px) {
-
   body {
     display: flex;
     flex-direction: row;
@@ -46,7 +45,6 @@
     display: flex;
     margin-right: 0.5rem;
     justify-content: center;
-    /* color:white; */
     margin-top: 0.75rem;
   }
 
@@ -87,9 +85,12 @@
     padding-top: 2rem;
     padding-right: 2rem;
     padding-left: 2rem;
-    width: 65%;
+    width: 75%;
     height: max-content;
     background-color: white;
+    min-height: 100vh;
+    min-width: 60%;
+    max-width: 60%;
   }
 
   #error-box {
