@@ -69,9 +69,10 @@ body {
   margin-top: .25em;
   margin-bottom: .25em;
   background-color:rgba(252, 171, 21, 0);
-  font-size: 0.9em;
-  font-weight: 600;
+  /* font-size: 0.9em; */
+  /* font-weight: 600; */
   /* background-color:  rgb(252, 171, 21); */
+  height: 2.9rem;
  }
 
 
@@ -104,27 +105,21 @@ body {
   color:rgb(252, 171, 21);
  }
 
- #error {
-  display: flex;
-  /* overflow: hidden; */
-  justify-content: center;
-  height: 0px;
-  top: 0.6em;
-  /* margin-top: 10px; */
-  position: relative;
-
-  color: orangered;
-  font-weight: 600;
-  transition: 0.1s ease-out;
-  /* padding: 5px; */
-  /* position: relative;
-  top: -40px; */
+ #error-box {
+  height: 1.25rem;
+  width: 100%;
+  overflow: hidden;
+  background: white;
  }
 
-
- .down {
-  transition: 0.1s ease-out;
-  animation-duration: 1s;
+ .error-style {
+  bottom: 100%;
   position: relative;
-  top: 0.6em;
+  transition: all .3s ease-out;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  background: orangered;
+  height: 100%;
  }

@@ -41,10 +41,14 @@ $(document).ready(function () {
   }
 
   // error handler
-  const errorHandler = function(message) {
+  const errorHandler = function (message) {
     let errorMessage = $('#error').text(`${message}`);
-    // $('#error')[0].classList.add("down");
-    // errorMessage.slideDown();
+    if (message !== '') {
+      $('.error-style').css('bottom', '0%')
+    }
+    if (message === '') {
+      $('.error-style').css('bottom', '100%')
+    }
     errorMessage;
   };
 
@@ -64,16 +68,13 @@ $(document).ready(function () {
 
     // input validation
     if(userText === ''){
-      return errorHandler('Text field empty!')
-      return alert('Text field empty!')
+      return errorHandler('Text field empty!');
     }
     if(userText === null){
-      return errorHandler('Text field null!')
-      return alert('Text field null!')
+      return errorHandler('Text field null!');
     }
     if(userText.length > 140){
-      return errorHandler('Tweet is too long!')
-      return alert('Tweet is too long!')
+      return errorHandler('Tweet is too long!');
     }
 
     $.ajax({
