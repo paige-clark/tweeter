@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS: RESET -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -36,7 +37,8 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+
+    <!-- top nav bar -->
     <nav>
       <div class="nav-left">
         <span class="website-name">tweeter</span>
@@ -51,7 +53,8 @@
         </div>
       </div>
     </nav>
-
+    
+    <!-- header -->
     <header class="main-header">
       <div>
         <img src="/images/profile-hex.png">
@@ -61,15 +64,15 @@
         <h2><span class="bold-text-2">Snail</span> Fan</h2>
       </div>
     </header>
-
+  
     <!-- error content here -->
     <div id="error-box">
       <section id="error" class="error-style">placeholder</section>
     </div>
-
-    <!-- page-specific (main) content here -->
+  
+    <!-- page-specific content here -->
     <main class="container">
-
+  
       <section class="new-tweet">
         <!--<h2>Compose Tweet</h2>-->
         <form action="/tweets" method="POST">
@@ -82,10 +85,10 @@
           </div>
         </form>
       </section>
-    
+  
       <!-- tweets-specific content here -->
       <section id="tweets-container"></section>
-    
+  
     </main>
   </body>
 </html>
