@@ -21,7 +21,10 @@ article {
   width: 96%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.2rem;
+  padding-right: 0.2rem;
   height: 60px;
+  font-size: 0.85rem;
  }
 
  .header-left {
@@ -31,9 +34,8 @@ article {
 
  .header-left img {
   align-self: center;
-  margin-right: 0.5em;
+  margin-right: 0.3em;
   width: 50px;
-  margin-top: 12px;
  }
 
  .tweet-paragraph {
