@@ -4,38 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-  // Test / driver code (temporary). Eventually will get this from the server.
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png",
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1660584971910
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1660671371910
-  //   }
-  // ]
 // populates tweet field
 $(document).ready(function () {
 
   const renderTweets = function(tweets) {
+    let newArray = [];
     for (const tweet of tweets) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+      newArray.push(createTweetElement(tweet));
+      // $('#tweets-container').prepend(createTweetElement(tweet));
     }
+    newArray.reverse();
+    $('#tweets-container').html(newArray);
   }
 
   const createTweetElement = function (tweetData) {
@@ -61,44 +40,66 @@ $(document).ready(function () {
       </article>`
   }
 
+  // error handler
+  const errorHandler = function(message) {
+    let errorMessage = $('#error').text(`${message}`);
+    // $('#error')[0].classList.add("down");
+    // errorMessage.slideDown();
+    errorMessage;
+  };
+
+  //escape function for making sure people can't run scrips
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // submit a form with AJAX and jQuery
   $("form").on("submit", function(event) {
     event.preventDefault();
-    let textObj = $(this).serialize();
-    console.log($('#tweet-text').val());
+
+    let userText = escape($('#tweet-text').val());
+    let userData = { text: userText }
 
     // input validation
-    if($('#tweet-text').val() === ''){
+    if(userText === ''){
+      return errorHandler('Text field empty!')
       return alert('Text field empty!')
     }
-    if($('#tweet-text').val() === null){
+    if(userText === null){
+      return errorHandler('Text field null!')
       return alert('Text field null!')
     }
-    if($('#tweet-text').val().length > 140){
+    if(userText.length > 140){
+      return errorHandler('Tweet is too long!')
       return alert('Tweet is too long!')
     }
 
     $.ajax({
       type: "POST",
       url: '/tweets',
-      data: $(this).serialize(),
+      data: userData, // was $(this).serialize()
       success: function(response) {
+        errorHandler('')
+        $remainingChar = 140;
+        $(".counter").val($remainingChar);
+        $("#tweet-text").val('');
         loadTweets();
-  
-        $("form").trigger("reset"); // TODO: not working right, doesn't reset counter
-      },
+      }
       //CONSIDER ADDING SUCCESS AND ERROR HANDLERS?
     });
-
-  
   });
 
   // make AJAX GET request for /tweets database
   const loadTweets = function () {
-    $.ajax('/tweets', { method: 'GET' })
-      .then(function (data) {
-        renderTweets(data);
-      });
-  }
+    $.ajax({
+      type: "GET",
+      url: '/tweets',
+      success: function(data) {
+        renderTweets(data)
+      }
+    })
+  };
   loadTweets();
 });

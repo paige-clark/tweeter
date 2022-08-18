@@ -38,6 +38,7 @@ article {
 
  .tweet-paragraph {
   width: 90%;
+  word-wrap: break-word;
   margin-left: auto;
   margin-right: auto;
   font-weight: 600;
