@@ -13,9 +13,7 @@ Hope you have fun on tweeter!
 ## Final Product
 
 !["desktop layout"](https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPad%20Air).png)
-!["mobile layout"](https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPhone%20XR).png)
-
-<img src="https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPhone%20XR).png" width="48">
+<img src="https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPhone%20XR).png" width="300">
 
 ## Dependencies
 
