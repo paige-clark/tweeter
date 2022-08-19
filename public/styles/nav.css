@@ -1,44 +1,43 @@
+/* formats how the navigation bar looks */
 nav {
   display: flex;
   width: 100%;
   background: #2818a100;
   color: #FFFFFF;
-  height: 75px; /* should be 120px for assignment */
+  height: 75px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5rem;
   width: 100%;
-  /* align-items: center; */
   justify-content: space-between;
   position: fixed;
   z-index: 4;
- }
+}
 
- .website-name {
+.website-name {
   font-family: 'Bungee', sans-serif;
   font-size: 1.25em;
- }
+}
 
- .nav-left {
+.nav-left {
   margin-left: 0.5rem;
   display: flex;
- }
+}
 
- .nav-right {
+.nav-right {
   margin-right: 0.5rem;
   display: flex;
   flex-direction: column;
- }
+}
 
- .nav-right-top {
+.nav-right-top {
   font-size: 0.85rem;
   margin-bottom: -.75rem;
   margin-top: -1rem;
- }
+}
 
- .nav-right-bottom {
+.nav-right-bottom {
   display: flex;
   justify-content: center;
   color: rgb(252, 171, 21);
- }
-
+}

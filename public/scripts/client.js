@@ -4,20 +4,20 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// populates tweet field
-$(document).ready(function () {
+$(document).ready(function() {
 
-  const renderTweets = function (tweets) {
+  // populates the tweet field with user tweets
+  const renderTweets = function(tweets) {
     let newArray = [];
     for (const tweet of tweets) {
       newArray.push(createTweetElement(tweet));
-      // $('#tweets-container').prepend(createTweetElement(tweet));
     }
     newArray.reverse();
     $('#tweets-container').html(newArray);
-  }
+  };
 
-  const createTweetElement = function (tweetData) {
+  // generates tweet html based on database objects
+  const createTweetElement = function(tweetData) {
     return `<article>
         <header>
             <div class="header-left">
@@ -37,34 +37,34 @@ $(document).ready(function () {
             <span><i class="fa-solid fa-heart hover-color fa-xs"></i></span>
           </div>
         </footer>
-      </article>`
-  }
+      </article>`;
+  };
 
-  // error handler
-  const errorHandler = function (message) {
+  // error handler function that calls error css
+  const errorHandler = function(message) {
     let errorMessage = $('#error').text(`${message}`);
     if (message !== '') {
-      $('.error-style').css('bottom', '0%')
+      $('.error-style').css('bottom', '0%');
     }
     if (message === '') {
-      $('.error-style').css('bottom', '100%')
+      $('.error-style').css('bottom', '100%');
     }
     errorMessage;
   };
 
-  //escape function for making sure people can't run scrips
-  const escape = function (str) {
+  // escape function for making sure people can't run scripts
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
   // submit a form with AJAX and jQuery
-  $("form").on("submit", function (event) {
+  $("form").on("submit", function(event) {
     event.preventDefault();
 
     let userText = escape($('#tweet-text').val());
-    let userData = { text: userText }
+    let userData = { text: userText };
 
     // input validation
     if (userText === '') {
@@ -80,27 +80,27 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: '/tweets',
-      data: userData, // was $(this).serialize()
-      success: function (response) {
-        errorHandler('')
+      data: userData,
+      success: function() {
+        errorHandler('');
         $remainingChar = 140;
         $(".counter").val($remainingChar);
         $("#tweet-text").val('');
-        loadTweets();
+        return loadTweets();
       }
-      //CONSIDER ADDING SUCCESS AND ERROR HANDLERS?
     });
   });
 
-  // make AJAX GET request for /tweets database
-  const loadTweets = function () {
+  // make AJAX GET request to populate the tweet field
+  const loadTweets = function() {
     $.ajax({
       type: "GET",
       url: '/tweets',
-      success: function (data) {
-        renderTweets(data)
+      success: function(data) {
+        renderTweets(data);
       }
-    })
+    });
   };
   loadTweets();
+
 });

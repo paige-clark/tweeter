@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     
     <!-- External CSS: FONTS -->
-    <!-- Bungee font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Bungee font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <!-- Source Sans Pro weight 300 and 600 font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Source Sans Pro weight 300 and 600 font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
     
@@ -26,7 +24,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" /> <!-- nav css -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" /> <!-- header css -->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" /> <!-- tweet css -->
-    <link rel="stylesheet" href="/styles/desktop.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/desktop.css" type="text/css" /> <!-- desktop config css -->
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,7 +36,6 @@
   </head>
 
   <body>
-
     <!-- top nav bar -->
     <nav>
       <div class="nav-left">
@@ -49,24 +46,23 @@
           <p><span class="bold-text">Write</span> a new tweet</p>
         </div>
         <div class="nav-right-bottom">
-          <!--<i class="fa-solid fa-angles-down"></i>-->
           <i class="fa-solid fa-kiwi-bird"></i>
         </div>
       </div>
     </nav>
-    
+  
     <!-- header -->
     <header class="main-header">
       <div class="profile-box">
-      <div>
-        <img src="/images/profile-hex.png">
+        <div>
+          <img src="/images/profile-hex.png">
+        </div>
+        <div>
+          <h2><span class="bold-text-2">Snail</span> Fan</h2>
+        </div>
       </div>
-      <div>
-        <h2><span class="bold-text-2">Snail</span> Fan</h2>
-      </div>
-    </div>
     </header>
-
+  
     <!-- error content here -->
     <div id="error-box">
       <section id="error" class="error-style">placeholder</section>
@@ -86,10 +82,10 @@
           </div>
         </form>
       </section>
-    
+  
       <!-- tweets-specific content here -->
       <section id="tweets-container"></section>
-    
+  
     </main>
   </body>
 </html>
