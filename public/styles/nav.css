@@ -36,8 +36,26 @@ nav {
   margin-top: -1rem;
 }
 
+@keyframes float {
+	0% {
+		transform: translatey(-2.5px);
+	}
+	50% {
+		transform: translatey(2.5px);
+	}
+	100% {
+		transform: translatey(-2.5px);
+	}
+}
+
 .nav-right-bottom {
   display: flex;
   justify-content: center;
   color: rgb(252, 171, 21);
+  transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+}
+
+.pointer {
+  cursor: pointer;
 }

@@ -6,6 +6,11 @@
 
 $(document).ready(function() {
 
+  // focus the text field when the top right of the nav bar is clicked
+  $(".nav-right").on("click", function(event) {
+    $("textarea").focus();
+  });
+
   // populates the tweet field with user tweets
   const renderTweets = function(tweets) {
     let newArray = [];
