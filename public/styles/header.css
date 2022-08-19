@@ -13,5 +13,12 @@
 }
 
 .main-header img {
-  margin-bottom: -2rem;
+  margin-bottom: -1rem;
+}
+
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
 }

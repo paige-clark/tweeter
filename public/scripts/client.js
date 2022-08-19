@@ -7,7 +7,7 @@
 // populates tweet field
 $(document).ready(function () {
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     let newArray = [];
     for (const tweet of tweets) {
       newArray.push(createTweetElement(tweet));
@@ -60,20 +60,20 @@ $(document).ready(function () {
   };
 
   // submit a form with AJAX and jQuery
-  $("form").on("submit", function(event) {
+  $("form").on("submit", function (event) {
     event.preventDefault();
 
     let userText = escape($('#tweet-text').val());
     let userData = { text: userText }
 
     // input validation
-    if(userText === ''){
+    if (userText === '') {
       return errorHandler('Text field empty!');
     }
-    if(userText === null){
+    if (userText === null) {
       return errorHandler('Text field null!');
     }
-    if(userText.length > 140){
+    if (userText.length > 140) {
       return errorHandler('Tweet is too long!');
     }
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
       type: "POST",
       url: '/tweets',
       data: userData, // was $(this).serialize()
-      success: function(response) {
+      success: function (response) {
         errorHandler('')
         $remainingChar = 140;
         $(".counter").val($remainingChar);
@@ -97,7 +97,7 @@ $(document).ready(function () {
     $.ajax({
       type: "GET",
       url: '/tweets',
-      success: function(data) {
+      success: function (data) {
         renderTweets(data)
       }
     })
