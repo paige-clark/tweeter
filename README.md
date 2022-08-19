@@ -15,6 +15,8 @@ Hope you have fun on tweeter!
 !["desktop layout"](https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPad%20Air).png)
 !["mobile layout"](https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPhone%20XR).png)
 
+<img src="https://github.com/paige-clark/tweeter/blob/master/docs/localhost_8080_(iPhone%20XR).png" width="48">
+
 ## Dependencies
 
 - Express
