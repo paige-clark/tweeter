@@ -37,15 +37,17 @@ nav {
 }
 
 @keyframes float {
-	0% {
-		transform: translatey(-2.5px);
-	}
-	50% {
-		transform: translatey(2.5px);
-	}
-	100% {
-		transform: translatey(-2.5px);
-	}
+  0% {
+    transform: translatey(-2.5px);
+  }
+
+  50% {
+    transform: translatey(2.5px);
+  }
+
+  100% {
+    transform: translatey(-2.5px);
+  }
 }
 
 .nav-right-bottom {
@@ -53,7 +55,7 @@ nav {
   justify-content: center;
   color: rgb(252, 171, 21);
   transform: translatey(0px);
-	animation: float 2s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .pointer {
